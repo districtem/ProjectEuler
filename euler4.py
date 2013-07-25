@@ -9,15 +9,23 @@ def the_function():
         '''
 
 def is_palindrome(num1, num2):
-    product = numx1 X num2
-    if product == reverse(product):
+    product = num1 * num2
+    reverse_product = str(product)[::-1]
+    if product == int(reverse_product):
         return True
     else:
         return False 
 
+
+#WIP
 def get_products():
-    product = 1
+    products = []
+
     for num in range(900,999):
         number_to_multiply = 999
-        product -= num x (num - 1)
+        product = num * number_to_multiply
+        products.append(product)
+    return products
 
+        
+        
