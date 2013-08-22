@@ -1,31 +1,33 @@
+'''
 def the_function():
-    '''
-    // get all 3 digit numbers between 900 and 999, store those numbers
-    // for numbers in range
-        // start with highest number and multiply by each number less than that number
-            // test if product is palindrome
-            // if palindrome store in something
-        //compare all palindromes stored to find largest palindrome
-        '''
+    get all 3 digit numbers between 900 and 999, store those numbers
+    for numbers in range
+        start with highest number and multiply by each number less than that number
+            test if product is palindrome
+            if palindrome store in something
+        compare all palindromes stored to find largest palindrome
+'''
 
-def is_palindrome(num1, num2):
-    product = num1 * num2
-    reverse_product = str(product)[::-1]
-    if product == int(reverse_product):
+def is_palindrome(num):
+    reverse_num = str(num)[::-1]
+    if num == int(reverse_num):
         return True
     else:
         return False 
 
 
-#WIP
-def get_products():
+def get_max_palindrome():
     products = []
 
-    for num in range(900,999):
-        number_to_multiply = 999
-        product = num * number_to_multiply
-        products.append(product)
-    return products
+    for num1 in range(999, 900, -1):
+        for num2 in range(num1, 900, -1):
+            product = num1 * num2
+            if is_palindrome(product) is True:
+                products.append(product)
+    return max(products)
+
+            
+        
 
         
         
